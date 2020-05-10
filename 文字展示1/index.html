@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: black;
+			/* color: white; */
+		}
+		div{
+			width: 50%;
+			height: 50px;
+			font-size: 25px;
+			line-height: 50px;
+			text-align: center;
+			position: relative;
+			opacity: 1;
+			color: rgba(255,255,255,0);
+			animation: 2s ease-in-out 2s showText;
+		}
+		div.first:before, div.second:before{
+			content: '';
+			width: 0%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			background-color: blueviolet;
+			animation: 2s ease-in-out cover;
+		}
+		div.second:before{
+			background-color: palegreen;
+			animation: 2s ease-in-out cover;
+		}
+		@keyframes cover {
+			0%{
+				width: 0;
+				left: 0;
+			}
+			50%{
+				width: 100%;
+			}
+			100%{
+				width: 0%;
+				right: 0;
+			}
+		}
+		@keyframes showText {
+			0%{
+				color: rgba(255,255,255,0);
+			}
+			100%{
+				color: rgba(255,255,255,1);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="first">
+		百年客人欧冠
+	</div>
+	<div class="second">
+		百年客人欧冠
+	</div>
+</body>
+
+</html>

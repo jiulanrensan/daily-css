@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>交错圆点</title>
+	<style>
+		body {
+			background-color: black;
+		}
+		section {
+			padding: 50px;
+			display: flex;
+			justify-content: center;
+		}
+		div{
+			width: 50px;
+			height: 50px;
+			margin: 0 20px;
+			border-radius: 50%;
+		}
+		div:nth-of-type(1){
+			background-color: rgb(250, 235, 215);
+			animation: 2s linear 0s infinite normal shadow1;
+		}
+		div:nth-of-type(2){
+			background-color: rgb(0, 139, 139);
+			animation: 2s linear 0.4s infinite normal shadow2;
+		}
+		div:nth-of-type(3){
+			background-color: rgb(0, 128, 128);
+			animation: 2s linear 0.6s infinite normal shadow3;
+		}
+		div:nth-of-type(4){
+			background-color: rgb(138, 43, 226);
+			animation: 2s linear 1s infinite normal shadow4;
+		}
+		@keyframes shadow1 {
+			0%{
+				box-shadow: 0 0 0 10px rgba(250, 235, 215, 0.8);
+			}
+			100%{
+				box-shadow: 0 0 0 80px rgba(250, 235, 215, 0);
+			}
+		}
+		@keyframes shadow2 {
+			0%{
+				box-shadow: 0 0 0 10px rgba(0, 139, 139, 0.8);
+			}
+			100%{
+				box-shadow: 0 0 0 80px rgba(0, 139, 139, 0);
+			}
+		}
+		@keyframes shadow3 {
+			0%{
+				box-shadow: 0 0 0 10px rgba(0, 128, 128, 0.8);
+			}
+			100%{
+				box-shadow: 0 0 0 80px rgba(0, 128, 128, 0);
+			}
+		}
+		@keyframes shadow4 {
+			0%{
+				box-shadow: 0 0 0 10px rgba(138, 43, 226, 0.8);
+			}
+			100%{
+				box-shadow: 0 0 0 80px rgba(138, 43, 226, 0);
+			}
+		}
+		/* box-shadow */
+		/* x偏移量 | y偏移量 | 阴影颜色 */
+		/* box-shadow: 60px -16px teal; */
+
+		/* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影颜色 */
+		/* box-shadow: 10px 5px 5px black; */
+
+		/* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+		/* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+
+		/* 插页(阴影向内) | x偏移量 | y偏移量 | 阴影颜色 */
+		/* box-shadow: inset 5em 1em gold; */
+
+		/* 任意数量的阴影，以逗号分隔 */
+		/* box-shadow: 3px 3px red, -1em 0 0.4em olive; */
+
+
+		/* animation */
+		/* @keyframes duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+		/* animation: 3s ease-in 1s 2 reverse both paused slidein; */
+
+		/* @keyframes duration | timing-function | delay | name */
+		/* animation: 3s linear 1s slidein; */
+
+		/* @keyframes duration | name */
+		/* animation: 3s slidein; */
+	</style>
+</head>
+
+<body>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+</body>
+
+</html>

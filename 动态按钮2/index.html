@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>按钮多重边框</title>
+	<style>
+		body{
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: black;
+			}
+			button{
+				width: 150px;
+				height: 50px;
+				border: 0;
+				background: transparent;
+				position: relative;
+				transition: all 1s ease-in-out;
+				padding: 0;
+				font-size: 20px;
+			}
+			button span, button div{
+				line-height: 50px;
+				display: block;
+				color: royalblue;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border: 1px solid royalblue;
+				transition: all 0.2s linear;
+			}
+			button>span{
+				top: 0;
+			}
+			button>div{
+				top: 0;
+			}
+			.border2{
+				width: 95%;
+				height: 120%;
+				left: 2.5%;
+				top: -10%;
+			}
+			.border3{
+				left: 5%;
+				top: -20%;
+				width: 90%;
+				height: 140%;
+			}
+			section{
+				position: absolute;
+				box-sizing: border-box;
+				transition: all 0.4s;
+			}
+			.left, .right{
+				width: 1px;
+				/* height: 100%; */
+				height: 0;
+				background-color: royalblue;
+			}
+			.left{
+				left: 0;
+				bottom: 0;
+				transition: all 0.4s 0.4s;
+			}
+			.right{
+				right: 0;
+				bottom: 0;
+			}
+			.top, .bottom{
+				/* width: 100%; */
+				width: 0;
+				height: 1px;
+				background-color: royalblue;
+			}
+			.top{
+				top: 0;
+				left: 0;
+			}
+			.bottom{
+				left: 0;
+				bottom: 0;
+				transition: all 0.4s 0.4s;
+			}
+			button:hover .left, button:hover .right{
+				height: 100%;
+			}
+			button:hover .top, button:hover .right{
+				transition: all 0.4s 0.4s;
+			}
+			button:hover .top, button:hover .bottom{
+				width: 100%;
+			}
+			button:hover .left, button:hover .bottom{
+				transition: all 0.4s;
+			}
+	</style>
+</head>
+
+<body>
+	<button>
+		<div class="border1">
+			<section class="left"></section>
+			<section class="top"></section>
+			<section class="right"></section>
+			<section class="bottom"></section>
+		</div>
+		<div class="border2">
+			<section class="left"></section>
+			<section class="top"></section>
+			<section class="right"></section>
+			<section class="bottom"></section>
+		</div>
+		<div class="border3">
+			<section class="left"></section>
+			<section class="top"></section>
+			<section class="right"></section>
+			<section class="bottom"></section>
+		</div>
+		<span>start</span>
+	</button>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.circle {
+			width: 100px;
+			height: 100px;
+			background-color: aqua;
+			border-radius: 50%;
+			overflow: hidden;
+			position: relative;
+		}
+		.part-one,.part-two{
+			position: absolute;
+			width: 50px;
+			height: 100%;
+			background-color: navy;
+		}
+		.part-two{
+			position: absolute;
+			left: 50%;
+			transform-origin: 0 50%;
+			/* 超过180deg,改变背景颜色， rotate减180 */
+			transform: rotate(20deg);
+			background-color: aqua;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="circle">
+		<div class="part-one"></div>
+		<div class="part-two"></div>
+	</div>
+</body>
+
+</html>

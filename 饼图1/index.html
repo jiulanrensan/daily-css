@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.circle{
+			text-align: center;
+			box-sizing:border-box;
+			width: 100px;
+			height: 100px;
+			/* background:rebeccapurple; */
+			background-color: #000;
+			position: relative;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		.one, .two{
+			width: 50px;
+			height: 100px;
+			background:rebeccapurple;
+			position: absolute;
+			left: 0;
+			overflow: hidden;
+			background-color: #000;
+			/* 超过180deg时，one设置overflow:hidden;背景颜色设置同circle */
+		}
+		.two{
+			left: 50px;
+			transform-origin: 0px 50px;
+			transform: rotate(190deg);
+			background:rebeccapurple;
+		}
+		.percent{
+			position: absolute;
+			width: 80%;
+			height: 80%;
+			left: 10%;
+			top: 10%;
+			border-radius: 50%;
+			z-index: 10;
+			color: #000;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+		}
+		.percent p{
+			margin: 0;
+			width: 100%;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="circle">
+		<!-- <div class="percent">
+			<p>80%</p>
+		</div> -->
+		<div class="one">
+			<div class="two"></div>
+		</div>
+		<div></div>
+	</div>
+</body>
+
+</html>

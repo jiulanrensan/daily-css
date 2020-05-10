@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+			body{
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: black;
+			}
+			button{
+				width: 100px;
+				height: 50px;
+				border: 1px solid royalblue;
+				background: transparent;
+				position: relative;
+				transition: all 1s ease-in-out;
+				padding: 0;
+				font-size: 20px;
+				overflow: hidden;
+			}
+			button span, button>div{
+				line-height: 50px;
+				display: block;
+				color: royalblue;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transition: all 0.2s linear;
+			}
+			button>span{
+				top: 0;
+			}
+			button>div{
+				top: 20px;
+				opacity: 0;
+			}
+			button:hover span{
+				transform: translateY(-20px);
+				opacity: 0;
+				/* margin-top: -20px; */
+			}
+			
+			button:hover>div{
+				opacity: 1;
+				color: royalblue;
+				transform: translateY(-20px);
+			}
+			section{
+				position: absolute;
+				box-sizing: border-box;
+				transition: all 0.4s;
+			}
+			.left, .right{
+				width: 1px;
+				/* height: 100%; */
+				height: 0;
+				background-color: royalblue;
+			}
+			.left{
+				left: 0;
+				bottom: 0;
+				transition: all 0.4s 0.4s;
+			}
+			.right{
+				right: 0;
+				bottom: 0;
+			}
+			.top, .bottom{
+				/* width: 100%; */
+				width: 0;
+				height: 1px;
+				background-color: royalblue;
+			}
+			.top{
+				top: 0;
+				left: 0;
+			}
+			.bottom{
+				left: 0;
+				bottom: 0;
+				transition: all 0.4s 0.4s;
+			}
+			button:hover .left, button:hover .right{
+				height: 100%;
+			}
+			button:hover .top, button:hover .right{
+				transition: all 0.4s 0.4s;
+			}
+			button:hover .top, button:hover .bottom{
+				width: 100%;
+			}
+			button:hover .left, button:hover .bottom{
+				transition: all 0.4s;
+			}
+			
+			/* property name | duration */
+			/* transition: margin-right 4s; */
+
+			/* property name | duration | delay */
+			/* transition: margin-right 4s 1s; */
+
+			/* property name | duration | timing function */
+			/* transition: margin-right 4s ease-in-out; */
+
+			/* property name | duration | timing function | delay */
+			/* transition: margin-right 4s ease-in-out 1s; */
+
+			/* Apply to 2 properties */
+			/* transition: margin-right 4s, color 1s; */
+
+			/* Apply to all changed properties */
+			/* transition: all 0.5s ease-out; */
+		</style>
+		
+</head>
+<body>
+    <button>
+			<section class="left"></section>
+			<section class="top"></section>
+			<section class="right"></section>
+			<section class="bottom"></section>
+			<span>start</span>
+			<div>start</div>
+		</button>
+
+</body>
+</html>
