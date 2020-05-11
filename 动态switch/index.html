@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: black;
+			/* color: white; */
+		}
+    label{
+      display: block;
+      width: 100px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 25px;
+      position: relative;
+    }
+    .switch{
+      position: absolute;
+      width: 90%;
+      height: 80%;
+      left: 5%;
+      top: 10%;
+      /* padding: 5px; */
+      box-sizing: border-box;
+      border-radius: 20px;
+    }
+    .circle{
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 0;
+      background-color: teal;
+      border-radius: 50%;
+      z-index: 10;
+      transition: all .5s;
+    }
+    .line{
+      position: absolute;
+      box-sizing: border-box;
+      width: 100%;
+      height: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: cadetblue;
+    }
+    input{
+      display: none;
+    }
+    input:checked + .switch .circle{
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <label for="switch">
+    <input type="checkbox" id="switch">
+    <div class="switch">
+      <div class="circle"></div>
+      <div class="line"></div>
+    </div>
+  </label>
+</body>
+</html>
