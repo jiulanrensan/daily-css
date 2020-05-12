@@ -18,22 +18,6 @@
 			background-color: rgb(157, 218, 236);
 			color: white;
 		}
-    @font-face {
-      font-family: 'iconfont';  /* project id 1559867 */
-      src: url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.eot');
-      src: url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.eot?#iefix') format('embedded-opentype'),
-      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.woff2') format('woff2'),
-      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.woff') format('woff'),
-      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.ttf') format('truetype'),
-      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.svg#iconfont') format('svg');
-    }
-    .iconfont{
-      font-family:"iconfont" !important;
-      font-size:16px;font-style:normal;
-      -webkit-font-smoothing: antialiased;
-      -webkit-text-stroke-width: 0.2px;
-      -moz-osx-font-smoothing: grayscale;
-    }
     .nav{
       width: 400px;
       height: 100px;
@@ -45,93 +29,87 @@
       align-items: center;
       box-sizing: border-box;
       border: 5px solid #fff;
-    }
-    label{
-      display: block;
-      width: 25%;
-      height: 100%;
       position: relative;
-      transition: all 1s;
-      border-radius: 10px;
-    }
-    label>input {
-      position: absolute;
-      opacity: 0;
     }
     .nav-item{
-      width: 100%;
+      width: 25%;
       height: 100%;
       border-radius: 10px;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all .2s;
     }
     .nav-item img{
       display: block;
-      position: absolute;
       width: 50%;
-      top: 50%;
-      left: 25%;
-      z-index: 10;
-      transform: translateY(-50%);
     }
-    .nav-item:after{
-      content: '';
+    .nav .cover{
+      /* content: ''; */
       position: absolute;
-      width: 100%;
+      width: 25%;
       height: 100%;
-      left: -100px;
+      left: 0;
       z-index: 0;
       border-radius: 10px;
-      transition: all 1s;
+      transition: all .5s;
       background-color: turquoise;
+    }
+    .nav-item span{
       opacity: 0;
+      transition: all .5s;
     }
-    input:checked+.nav-item:after{
-      /* opacity: 1;
-      left: 0; */
-      animation: 1s linear 0 move;
+    .active{
+      width: 30%;
+      transform: translateY(-5px);
     }
-    @keyframes move {
-      0%{
-        left: -100px;
-        opacity: 0;
-      }
-      50%{
-        left: 50px;
-        opacity: 0;
-      }
-      100%{
-        left: 0;
-        opacity: 1;
-      }
+    .active span{
+      opacity: 1;
     }
   </style>
 </head>
 <body>
   <div class="nav">
-    <label for="1">
-      <input type="radio" name="nav" id="1">
-      <div class="nav-item">
-        <img src="./parttime.png" alt="">
-      </div>
-    </label>
-    <label for="2">
-      <input type="radio" name="nav" id="2">
-      <div class="nav-item">
-        <img src="./parttime.png" alt="">
-      </div>
-    </label>
-    <label for="3">
-      <input type="radio" name="nav" id="3">
-      <div class="nav-item">
-        <img src="./parttime.png" alt="">
-      </div>
-    </label>
-    <label for="4">
-      <input type="radio" name="nav" id="4">
-      <div class="nav-item">
-        <img src="./parttime.png" alt="">
-      </div>
-    </label>
+    <div class="cover"></div>
+    <div class="nav-item" data-set="0">
+      <img src="./parttime.png" alt="">
+      <span>Home</span>
+    </div>
+    <div class="nav-item" data-set="1">
+      <img src="./parttime.png" alt="">
+      <span>Home</span>
+    </div>
+    <div class="nav-item" data-set="2">
+      <img src="./parttime.png" alt="">
+      <span>Home</span>
+    </div>
+    <div class="nav-item" data-set="3">
+      <img src="./parttime.png" alt="">
+      <span>Home</span>
+    </div>
   </div>
+  <script>
+    window.onload = () => {
+      const nav = document.getElementsByClassName('nav')[0]
+      const cover = document.getElementsByClassName('cover')[0]
+      const itemList = document.getElementsByClassName('nav-item')
+      nav.addEventListener('click', (ev) => {
+        let idx = 0
+        if(ev.target.tagName === 'DIV'){
+          idx = ev.target.dataset.set
+        } else if (ev.target.tagName === 'IMG'){
+          idx = ev.target.parentNode.dataset.set
+          
+        }
+        Array.from(itemList).forEach(item => {
+          item.classList.remove('active')
+        })
+        cover.style.left = `${idx*100}px`
+        itemList[idx].classList.add('active')
+      }, false)
+    }
+  </script>
 </body>
 </html>
