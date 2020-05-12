@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1559867_2e5hqj9o847.css"> -->
+  <!-- <script src="//at.alicdn.com/t/font_1559867_2e5hqj9o847.js"></script> -->
+  <style>
+    body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: rgb(157, 218, 236);
+			color: white;
+		}
+    @font-face {
+      font-family: 'iconfont';  /* project id 1559867 */
+      src: url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.eot');
+      src: url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.eot?#iefix') format('embedded-opentype'),
+      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.woff2') format('woff2'),
+      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.woff') format('woff'),
+      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.ttf') format('truetype'),
+      url('//at.alicdn.com/t/font_1559867_2e5hqj9o847.svg#iconfont') format('svg');
+    }
+    .iconfont{
+      font-family:"iconfont" !important;
+      font-size:16px;font-style:normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .nav{
+      width: 400px;
+      height: 100px;
+      border-radius: 10px 10px 60px 60px;
+      background-color: #fff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      border: 5px solid #fff;
+    }
+    label{
+      display: block;
+      width: 25%;
+      height: 100%;
+      position: relative;
+      transition: all 1s;
+      border-radius: 10px;
+    }
+    label>input {
+      position: absolute;
+      opacity: 0;
+    }
+    .nav-item{
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      position: relative;
+    }
+    .nav-item img{
+      display: block;
+      position: absolute;
+      width: 50%;
+      top: 50%;
+      left: 25%;
+      z-index: 10;
+      transform: translateY(-50%);
+    }
+    .nav-item:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: -100px;
+      z-index: 0;
+      border-radius: 10px;
+      transition: all 1s;
+      background-color: turquoise;
+      opacity: 0;
+    }
+    input:checked+.nav-item:after{
+      /* opacity: 1;
+      left: 0; */
+      animation: 1s linear 0 move;
+    }
+    @keyframes move {
+      0%{
+        left: -100px;
+        opacity: 0;
+      }
+      50%{
+        left: 50px;
+        opacity: 0;
+      }
+      100%{
+        left: 0;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <label for="1">
+      <input type="radio" name="nav" id="1">
+      <div class="nav-item">
+        <img src="./parttime.png" alt="">
+      </div>
+    </label>
+    <label for="2">
+      <input type="radio" name="nav" id="2">
+      <div class="nav-item">
+        <img src="./parttime.png" alt="">
+      </div>
+    </label>
+    <label for="3">
+      <input type="radio" name="nav" id="3">
+      <div class="nav-item">
+        <img src="./parttime.png" alt="">
+      </div>
+    </label>
+    <label for="4">
+      <input type="radio" name="nav" id="4">
+      <div class="nav-item">
+        <img src="./parttime.png" alt="">
+      </div>
+    </label>
+  </div>
+</body>
+</html>
