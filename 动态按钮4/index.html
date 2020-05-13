@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			/* background-color: black; */
+			/* color: white; */
+		}
+		.btn{
+			width: 100px;
+			height: 100px;
+			cursor: pointer;
+			box-sizing: border-box;
+			border-radius: 50%;
+			border: 0;
+			outline: none;
+			box-shadow: 0 0 0px 700px rgb(0,0,0);
+			background-color: #000;
+			padding: 20px 0;
+			position: absolute;
+			transition: all .5s;
+			/* display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: flex-start; */
+		}
+		.btn:hover div.bar{
+			width: 60%;
+			transition: all .2s 0s;
+		}
+		.btn div.bar{
+			/* width: 60%; */
+			width: 0%;
+			height: 3px;
+			position: absolute;
+			/* margin-left: 20%; */
+			background-color: skyblue;
+			transition: all .2s;
+			transform-origin: 0% 0%;
+			top: 25px;
+		}
+		.btn div:nth-of-type(1){
+			transition: all .2s .1s;
+			left: 20%;
+		}
+		.btn div:nth-of-type(2){
+			transition: all .2s .2s;
+			top: 50px;
+			left: 20%;
+		}
+		.btn div:nth-of-type(3){
+			transition: all .2s .3s;
+			top: 75px;
+			left: 20%;
+		}
+		.active1{
+			transform: rotate(60deg);
+			transform-origin: 0 0;
+			left: 35% !important;
+		}
+		.active2{
+			width: 0 !important;
+			transform-origin: center;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.active3{
+			transform: rotate(-60deg);
+			transform-origin: center;
+			left: 35% !important;
+		}
+		.btn-active{
+			box-shadow: 0 0 0 0 rgb(0,0,0);
+		}
+  </style>
+</head>
+<body>
+	<div class="btn">
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</div>
+	<script>
+		window.onload = () => {
+			var btn = document.getElementsByClassName('btn')[0]
+			var barNodeList = document.getElementsByClassName('bar')
+			btn.addEventListener('click', (ev) => {
+				// console.log(ev)
+				// ev.target
+				Array.from(barNodeList).forEach((el,idx) => {
+					el.classList.toggle(`active${idx+1}`)
+				})
+				btn.classList.toggle('btn-active')
+			}, false)
+		}
+	</script>
+</body>
+</html>
