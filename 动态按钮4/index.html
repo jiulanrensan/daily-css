@@ -27,7 +27,7 @@
 			border-radius: 50%;
 			border: 0;
 			outline: none;
-			box-shadow: 0 0 0px 700px rgba(210, 180, 140,.3);
+			box-shadow: 0 0 0px 1000px rgba(210, 180, 140,.3);
 			background-color: #fff;
 			position: relative;
 			transition: all .5s;
@@ -69,6 +69,15 @@
 			transition: all .2s;
 			background-color: aqua;
 		}
+		/* .bar:nth-of-type(1){
+			transform: rotate(45deg) translate(16px,14px);
+		}
+		.bar:nth-of-type(2){
+			width: 0;
+		}
+		.bar:nth-of-type(3){
+			transform: rotate(-45deg) translate(16px,-14px);
+		} */
 		.bar:nth-of-type(1):after{
 			transition: all .2s .1s;
 		}
@@ -82,19 +91,16 @@
 			width: 100%;
 		}
 		.btn-active {
-			box-shadow: 0 0 0px 700px rgba(140, 147, 210, 0.9);
+			box-shadow: 0 0 0px 1000px rgba(140, 147, 210, 0.9);
 		}
 		.active1{
-			top: 20px;
-			transform: rotate(45deg);
+			transform: rotate(45deg) translate(16px,14px);
 		}
 		.active2{
 			width: 0;
 		}
 		.active3{
-			/* margin-top: -20px; */
-			top: -20px;
-			transform: rotate(-45deg);
+			transform: rotate(-45deg) translate(16px,-14px);
 		}
 	</style>
 </head>
